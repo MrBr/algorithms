@@ -23,4 +23,4 @@ const binarySearch = (arr, comparator) => {
   return direction === 0 ? last : null;
 }
 
-module.exports = binarySearch;
+export default binarySearch;

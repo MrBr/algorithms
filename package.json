@@ -1,8 +1,9 @@
 {
   "name": "@MrBr/algorithms",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "test": "jest"
+    "test": "NODE_OPTIONS='--experimental-vm-modules' jest"
   },
   "dependencies": {
     "jest": "^27.4.5"

@@ -1,4 +1,4 @@
-const binarySearch = require('./index');
+import binarySearch from './index';
 
 describe('binary search', () => {
     test('finds the first item in sorted list', () => {
