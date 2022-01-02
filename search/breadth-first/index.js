@@ -18,6 +18,8 @@ const bfs = (node, comparator) => {
 
 
 const bfsTree = (node, comparator) => {
+  // Avoid unnecessary if on the top of the bfs as for all nodes
+  // beside the root the node is validated before going to it children
   if (comparator(node)) {
     return node;
   }
