@@ -3,14 +3,8 @@ const quickSort = (list, comparator, pivotIndex = 0, end = list.length  - 1) => 
   let leftIndex = pivotIndex + 1;
   let rightIndex = end;
 
-  const partitionLength = Math.abs(pivotIndex - rightIndex);
-  if (partitionLength === 1 && comparator(list[pivotIndex], list[leftIndex]) > 0) {
-    // Two elements remaining; have to be sorted
-    list[pivotIndex] = list[leftIndex];
-    list[leftIndex] = pivotItem;
-    return list;
-  } else if (partitionLength <= 1) {
-    // Two or fewer elements remaining; don't need sorting
+  const partitionLength = end - pivotIndex;
+  if (partitionLength <= 0) {
     return list;
   }
 
@@ -46,7 +40,7 @@ const quickSort = (list, comparator, pivotIndex = 0, end = list.length  - 1) => 
   list[replacementIndex] = pivotItem;
 
   quickSort(list, comparator, pivotIndex, replacementIndex - 1);
-  quickSort(list, comparator, replacementIndex + 1);
+  quickSort(list, comparator, replacementIndex + 1, end);
 
   return list;
 }
