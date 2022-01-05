@@ -4,23 +4,20 @@ const binarySearch = (arr, comparator) => {
   let current;
   let direction;
 
-  while (high - low > 1) {
+  while (high - low >  -1) {
     current = Math.floor((high - low) / 2) + low;
     direction = comparator(arr[current]);
 
     if (direction === 0) {
       return current;
     } else if (direction > 0) {
-      low = current;
+      low = current + 1;
     } else {
-      high = current;
+      high = current - 1;
     }
   }
 
-  const last = low === 0 ? low : high;
-  direction = comparator(arr[last])
-
-  return direction === 0 ? last : null;
+  return -1;
 }
 
 export default binarySearch;

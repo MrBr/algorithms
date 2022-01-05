@@ -25,4 +25,11 @@ describe('binary search', () => {
 
         expect(index).toBe(searchedIndex);
     });
+    test('returns -1 when element not in list', () => {
+        const list = [0,1,5,21,43];
+        const searchedValue = 2;
+        const index = binarySearch( list, (val) => searchedValue - val);
+
+        expect(index).toBe(-1);
+    });
 });
